@@ -8,13 +8,13 @@ class CreaturesController < ApplicationController
   end
 
   def new
-    @user = User.find(params[:user_id])
+    # @user = current_user.id
     @creature = Creature.new
   end
 
   def create
     @creature = Creature.new(params_creature)
-    @creature.user = User.find(params[:user_id])
+    @creature.user_id = current_user
     @creature.save
     redirect_to creature_path(@creature)
   end
