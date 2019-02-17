@@ -1,0 +1,9 @@
+<h1>Magical Creatures</h1>
+
+<% @creatures.each do |creature| %>
+  <li>
+    <%= creature.name %> | <%= creature.super_power %> | <%= creature.price %>
+    <%= link_to 'Details', creature_path(creature.id) %>
+  </li>
+<% end %>
+

@@ -5,6 +5,5 @@ class Creature < ApplicationRecord
   validates :name, presence: true
   validates :price, presence: true
 
-  mount_uploader :photo, PhotoUploader
-
+  # mount_uploader :photo, PhotoUploader
 end
