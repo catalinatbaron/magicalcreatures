@@ -2,7 +2,13 @@
 
 <p>Abilities: <%= @creature.super_power %></p>
 
+<p>Description: <%= @creature.description %></p>
+
 <p>Price: <strong><%= @creature.price %></strong> </p>
 
+<p>
+  <%= link_to 'Edit', edit_creature_path%> |
+  <%= link_to 'Delete', creature_path(@creature), method: :delete, data: { confirm: 'Are you sure?' }  %>
+</p>
 
-  <%= link_to 'Back', creatures_path %>
+<p><%= link_to 'Back', creatures_path %></p>
