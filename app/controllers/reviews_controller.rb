@@ -20,6 +20,12 @@ class ReviewsController < ApplicationController
     end
   end
 
+  def destroy
+    @review = Review.find(params[:id])
+    @review.destroy
+    redirect_to creature_path(@booking.creature)
+  end
+
   private
 
   def set_booking
@@ -30,4 +36,3 @@ class ReviewsController < ApplicationController
     params.require(:review).permit(:description, :rating, :booking_id)
   end
 end
-
