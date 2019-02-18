@@ -6,24 +6,39 @@
 
 <p>Price: <strong><%= @creature.price %></strong> </p>
 
-<% @creature.bookings.each do |booking| %>
+<h2> Bookings</h2>
+<% @bookings.each do |booking| %>
   <li> <%=booking.start_time  %> - <%= booking.end_time %> <%= link_to 'See details', booking_path(booking) %></li>
+
+  <li> <%= link_to 'Edit', edit_creature_booking_path(booking) %> <%= link_to 'Destroy', booking_path(booking), method: :delete %></li>
+<% end %>
+
+<h2> Reviews </h2>
+
+<% @reviews.each do |review| %>
+<li> <%= review.description %> - <%= review.rating %></li>
+
   <% if policy(@creature).update?%>
     <%= link_to 'Edit', edit_creature_booking_path(@creature, booking) %>
   <% end %>
   <% if policy(@creature).destroy?%>
     <%= link_to 'Destroy', booking_path(booking), method: :delete %>
   <% end %>
+
 <% end %>
 
 
 <p>
+
+  <%= link_to 'Edit', edit_creature_path%>
+
   <% if policy(@creature).update?%>
     <%= link_to 'Edit', edit_creature_path(@creature)%>
   <% end %> |
   <% if policy(@creature).destroy?%>
     <%= link_to 'Delete', creature_path(@creature), method: :delete, data: { confirm: 'Are you sure?' }  %>
   <% end %>
+
 
 </p>
 

@@ -6,7 +6,18 @@ class CreaturesController < ApplicationController
 
   def show
     @creature = Creature.find(params[:id])
+
+    @bookings = Booking.where(id: @creature.bookings)
+    @reviews = []
+
+    @bookings.each do |booking|
+      unless booking.review_id.nil?
+        @reviews << Review.find(booking.review_id)
+      end
+    end
+
     authorize @creature
+
   end
 
   def new
