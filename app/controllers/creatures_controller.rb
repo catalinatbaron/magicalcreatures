@@ -17,7 +17,6 @@ class CreaturesController < ApplicationController
     end
 
     authorize @creature
-
   end
 
   def new
