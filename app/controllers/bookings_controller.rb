@@ -19,6 +19,24 @@ class BookingsController < ApplicationController
     redirect_to booking_path(@booking)
   end
 
+  def edit
+    @booking = Booking.find(params[:id])
+    @creature = Creature.find(params[:creature_id])
+  end
+
+  def update
+    @creature = Creature.find(params[:creature_id])
+    @booking = Booking.find(params[:id])
+    @booking.update(booking_params)
+    redirect_to booking_path(@booking)
+  end
+
+  def destroy
+    @booking = Booking.find(params[:id])
+    @creature = Creature.find(@booking.creature.id)
+    @booking.destroy
+    redirect_to creature_path(@creature)
+  end
 
   private
 
