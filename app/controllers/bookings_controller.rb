@@ -43,8 +43,8 @@ class BookingsController < ApplicationController
   end
 
   def my_bookings
-    @booking = Booking.find(params[:id])
-    @creature = Creature.find(params[:creature_id])
+    @bookings = Booking.where(user_id: current_user.id)
+    authorize @bookings
   end
 
   private
