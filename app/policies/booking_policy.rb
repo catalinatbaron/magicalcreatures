@@ -14,11 +14,11 @@ class BookingPolicy < ApplicationPolicy
   end
 
   def update?
-    record.user == user
+    record.user == user || record.creature.user == user
   end
 
   def destroy?
-    record.user == user
+    record.user == user || record.creature.user == user
   end
 
   def my_bookings?
