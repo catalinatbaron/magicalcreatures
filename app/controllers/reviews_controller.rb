@@ -10,9 +10,8 @@ class ReviewsController < ApplicationController
     @review = Review.new(review_params)
 
     if @review.save
-    @booking.review_id = @review.id
-    @booking.save
-
+      @booking.review_id = @review.id
+      @booking.save
       redirect_to creature_path(@booking.creature)
     else
       render :new
