@@ -38,6 +38,11 @@ class BookingsController < ApplicationController
     redirect_to creature_path(@creature)
   end
 
+  def my_bookings
+    @booking = Booking.find(params[:id])
+    @creature = Creature.find(params[:creature_id])
+  end
+
   private
 
   def booking_params
