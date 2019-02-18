@@ -16,6 +16,8 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
 gem 'devise'
+# User authorization
+gem 'pundit'
 
 gem 'carrierwave', '~> 1.2'
 
