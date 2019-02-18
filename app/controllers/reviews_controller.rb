@@ -30,4 +30,3 @@ class ReviewsController < ApplicationController
     params.require(:review).permit(:description, :rating, :booking_id)
   end
 end
-
