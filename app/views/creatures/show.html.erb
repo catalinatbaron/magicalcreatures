@@ -13,8 +13,12 @@
 
 
 <p>
-  <%= link_to 'Edit', edit_creature_path%> |
-  <%= link_to 'Delete', creature_path(@creature), method: :delete, data: { confirm: 'Are you sure?' }  %>
+  <% if policy(@creature).update?%>
+    <%= link_to 'Edit', edit_creature_path(@creature)%>
+  <% end %> |
+  <% if policy(@creature).destroy?%>
+    <%= link_to 'Delete', creature_path(@creature), method: :delete, data: { confirm: 'Are you sure?' }  %>
+  <% end %>
 </p>
 
 <p><%= link_to 'Back', creatures_path %></p>
