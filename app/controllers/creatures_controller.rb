@@ -54,6 +54,11 @@ class CreaturesController < ApplicationController
     redirect_to creatures_path
   end
 
+  def my_creatures
+    @creatures = Creature.where(user_id: current_user.id)
+    authorize @creatures
+  end
+
   private
 
   def params_creature
