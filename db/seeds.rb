@@ -7,8 +7,9 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 puts ' Destroying all the shit'
 
-Review.destroy_all
 Booking.destroy_all
+Review.destroy_all
+
 
 Creature.destroy_all
 User.destroy_all
@@ -27,7 +28,7 @@ user4 = User.create!(name:'Rick Sanchez', email: 'rickisdope@gmail.com', passwor
 user5 = User.create!(name:'Morty Smith ', email: 'msmith@gmail.com', password:'rocknroll')
 
 puts 'Making some creatures'
-creature1 = Creature.create!(name:'Unicorn', super_power:'I believe I can fly', price:'100', user_id: user2.id)
+creature1 = Creature.create!(name:'Unicorn', super_power:'I believe I can fly', price:'100', user_id: user2.id, remote_photo_url: "https://i.pinimg.com/564x/c1/65/f4/c165f409a2846a67d7e023953f1c614a.jpg?b=t")
 creature2 = Creature.create!(name:'Flying Camel', super_power:"I'll take you to your destiny", price:'200', user_id: user3.id)
 creature3 = Creature.create!(name:'Dragon', super_power:'Fire', price:'150',user_id: user3.id)
 creature4 = Creature.create!(name:'Elf', super_power:'I believe I can fly', price:'100',user_id: user3.id)
