@@ -1,0 +1,5 @@
+<h1><%= @booking.creature.name %></h1>
+<li> <%= @booking.start_time %> - <%= @booking.end_time %> </li>
+
+
+<%= link_to 'go back', creature_path(@booking.creature) %>
