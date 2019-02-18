@@ -20,6 +20,12 @@ class ReviewsController < ApplicationController
     end
   end
 
+  def destroy
+    @review = Review.find(params[:id])
+    @review.destroy
+    redirect_to creature_path(@booking.creature)
+  end
+
   private
 
   def set_booking

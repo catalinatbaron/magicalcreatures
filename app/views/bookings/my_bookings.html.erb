@@ -1,5 +1,10 @@
 <h1>All your bookings!</h1>
 
 <% current_user.bookings.each do |booking| %>
-  <li> <%=booking.start_time  %> - <%= booking.end_time %> <%= link_to 'See details', booking_path(booking) %></li>
+  <li>
+    <p><%=booking.start_time  %> - <%= booking.end_time %> <%= link_to 'See details', booking_path(booking) %></p>
+    <% unless booking.review_id.nil? %>
+    <%= Review.find(booking.review_id).description %> | <%= Review.find(booking.review_id).rating %>
+    <% end %>
+  </li>
 <% end %>
