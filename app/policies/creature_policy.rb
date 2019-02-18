@@ -24,4 +24,8 @@ class CreaturePolicy < ApplicationPolicy
   def destroy?
     record.user == user
   end
+
+  def my_creatures?
+    true
+  end
 end
