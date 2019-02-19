@@ -4,7 +4,8 @@
     <h1 class="main-title">Magic</h1>
   </div>
   <div class="sub-title">
-    <p>Find today your magical creature</p>
+    <p class="line-one">Find today your magical creature</p>
+    <p class="line-two"> <%= link_to "Go to Creatures", creatures_path, class: "btn btn-primary" %> </p>
   </div>
 </div>
 <div class="container text-center">
@@ -12,9 +13,8 @@
   <div class="content">
     <!-- Use a button to pause/play the video with JavaScript -->
   </div>
-      <h1>Rent a Magical Creature</h1>
+  <h1>Rent a Magical Creature</h1>
   <div class="instructions">
-
     <div class="choose">
       <%= image_tag("unicorn.png", width: 100) %>
       <p>Choose magical creature</p>
@@ -28,5 +28,3 @@
       <p>Have a good time</p>
     </div>
   </div>
-  <%= link_to "Go to Creatures", creatures_path, class: "btn btn-primary" %>
-

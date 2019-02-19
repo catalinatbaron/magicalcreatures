@@ -38,14 +38,22 @@ video {
    font-size: 100px;
 }
 
-.sub-title p {
-  padding-top: 30%;
+.line-one {
+  padding-top: 5%;
   position: absolute;
   display: flex;
   top: 0; right: 0; bottom: 0; left: 0;
-  align-itmes: center;
+  align-items: center;
   justify-content: center;
   color: white;
+}
+.line-two {
+  padding-top: 18%;
+  position: absolute;
+  display: flex;
+  top: 0; right: 0; bottom: 0; left: 0;
+  align-items: center;
+  justify-content: center;
 }
 
 
