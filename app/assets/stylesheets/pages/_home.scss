@@ -1,1 +1,45 @@
 // Specific CSS for your home-page
+.banner {
+  position: relative;
+ height: calc(100%-70px);
+ background-position: center;
+ // background-attachment: fixed;
+ color: white;
+ text-align: center;
+}
+
+video {
+  z-index: -1;
+  width: 100%;
+  height: auto;
+}
+
+.main-title {
+  margin-top: 20%;
+  position: absolute;
+  display: flex;
+  top: 0; right: 0; bottom: 0; left: 0;
+  align-itmes: center;
+  justify-content: center;
+   font-family: 'Rozha One', serif;
+   font-size: 100px;
+}
+
+.sub-title p {
+  padding-top: 30%;
+  position: absolute;
+  display: flex;
+  top: 0; right: 0; bottom: 0; left: 0;
+  align-itmes: center;
+  justify-content: center;
+}
+
+.instructions{
+  display: flex;
+ align-items: center;
+  justify-content: center;
+  justify-content: space-between;
+  margin: auto 20%;
+}
+
+

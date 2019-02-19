@@ -1,6 +1,32 @@
+<div class="banner">
+  <%= video_tag(["stars.mp4"], :autoplay => true, :loop => true)%>
+  <div class="title">
+    <h1 class="main-title">Magic</h1>
+  </div>
+  <div class="sub-title">
+    <p>Find today your magical creature</p>
+  </div>
+</div>
 <div class="container text-center">
+  <!-- Optional: some overlay text to describe the video -->
+  <div class="content">
+    <!-- Use a button to pause/play the video with JavaScript -->
+  </div>
+      <h1>Rent a Magical Creature</h1>
+  <div class="instructions">
 
-  <h1>Rent a Magical Creature</h1>
+    <div class="choose">
+      <%= image_tag("unicorn.png", width: 100) %>
+      <p>Choose magical creature</p>
+    </div>
+    <div class="book">
+      <%= image_tag("wand.png", width: 100) %>
+      <p>Book it</p>
+    </div>
+    <div class="enjoy">
+      <%= image_tag("confetti.png", width: 100) %>
+      <p>Have a good time</p>
+    </div>
+  </div>
   <%= link_to "Go to Creatures", creatures_path, class: "btn btn-primary" %>
 
-</div>

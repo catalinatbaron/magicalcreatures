@@ -1,5 +1,16 @@
-<h1>All your creatures!</h1>
-
-<% current_user.creatures.each do |creature| %>
-  <li> <%=creature.name  %> - <%= creature.description %> <%= link_to 'Go back to creatures', creatures_path %></li>
-<% end %>
+<div class="container">
+  <h1 class="text-center">All your creatures!</h1>
+  <div class="row">
+    <% current_user.creatures.each do |creature| %>
+      <div class="col-sm-4">
+        <div class="card-body">
+          <h2 class="card-title"> <%=creature.name  %> </h2>
+          <p class="card-text"> <%= creature.description %> </p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+<div class="container">
+  <%= link_to 'Go back to creatures', creatures_path, class: "btn btn-primary" %>
+</div>
