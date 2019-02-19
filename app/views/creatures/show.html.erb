@@ -1,46 +1,48 @@
 <div class="container">
-  <div class="row">
-    <div class="col">
-      <% if @creature.photo.present? %>
-      <%=  cl_image_tag @creature.photo, :crop=>"scale" %>
-      <% end %>
-    </div>
-    <div class="col">
-      <h1><%= @creature.name %></h1>
-      <p>Abilities: <%= @creature.super_power %></p>
-      <p>Description: <%= @creature.description %></p>
-      <p>Price: <strong><%= @creature.price %></strong> </p>
-      <ul class="list-inline">
-        <li class="list-inline-item"> <%= link_to 'Edit Creature', edit_creature_path, class: "btn btn-primary" %>
-        </li>
-        <li class="list-inline-item"> <%= link_to 'Back', creatures_path, class: "btn btn-primary" %></li>
-        <li><%= link_to 'Book a creature', new_creature_booking_path(@creature), class: "btn btn-primary" %></li>
-      </ul>
-      <h2> Reviews </h2>
-      <table class="table">
-        <tr>
-          <th>Description</th>
-          <th>Rating</th>
-        </tr>
-        <% @reviews.each do |review| %>
-        <tr>
-          <td> <%= review.description %> </td>
-          <td> <%= review.rating %> </td>
-        </tr>
+  <div class="page-header">
+    <div class="row">
+      <div class="col">
+        <% if @creature.photo.present? %>
+        <%=  cl_image_tag @creature.photo, :crop=>"scale" %>
         <% end %>
-      </table>
-      <ul class="list-inline">
-        <li class="list-inline-item">
-          <% if policy(@creature).update?%>
-          <%= link_to 'Edit Review', edit_creature_path(@creature), class: "btn btn-primary"%>
+      </div>
+      <div class="col">
+        <h1><%= @creature.name %></h1>
+        <p>Abilities: <%= @creature.super_power %></p>
+        <p>Description: <%= @creature.description %></p>
+        <p>Price: <strong><%= @creature.price %></strong> </p>
+        <ul class="list-inline">
+          <li class="list-inline-item"> <%= link_to 'Edit Creature', edit_creature_path, class: "btn btn-primary" %>
+          </li>
+          <li class="list-inline-item"> <%= link_to 'Back', creatures_path, class: "btn btn-primary" %></li>
+          <li><%= link_to 'Book a creature', new_creature_booking_path(@creature), class: "btn btn-primary" %></li>
+        </ul>
+        <h2> Reviews </h2>
+        <table class="table">
+          <tr>
+            <th>Description</th>
+            <th>Rating</th>
+          </tr>
+          <% @reviews.each do |review| %>
+          <tr>
+            <td> <%= review.description %> </td>
+            <td> <%= review.rating %> </td>
+          </tr>
           <% end %>
-        </li>
-        <li class="list-inline-item">
-          <% if policy(@creature).destroy?%>
-          <%= link_to 'Delete Review', creature_path(@creature), method: :delete, class: "btn btn-primary", data: { confirm: 'Are you sure?' }  %>
-          <% end %>
-        </li>
-      </ul>
+        </table>
+        <ul class="list-inline">
+          <li class="list-inline-item">
+            <% if policy(@creature).update?%>
+            <%= link_to 'Edit Review', edit_creature_path(@creature), class: "btn btn-primary"%>
+            <% end %>
+          </li>
+          <li class="list-inline-item">
+            <% if policy(@creature).destroy?%>
+            <%= link_to 'Delete Review', creature_path(@creature), method: :delete, class: "btn btn-primary", data: { confirm: 'Are you sure?' }  %>
+            <% end %>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </div>
