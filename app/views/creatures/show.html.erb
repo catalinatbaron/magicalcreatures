@@ -8,17 +8,14 @@
 
   <p>Price: <strong><%= @creature.price %></strong> </p>
 
-<!--   <h2> Bookings</h2>
-   @bookings.each do |booking| %>
-    <li> booking.start_time  %> -  booking.end_time %>  link_to 'See details', booking_path(booking) %></li>
-     if policy(booking).update?%>
-       link_to 'Edit', edit_creature_booking_path(@creature, booking), class: "link" %>
-     end %>
-     if policy(booking).destroy?%>
-       link_to 'Destroy', booking_path(booking), method: :delete, class: "link" %>
-     end %>
-   end %> -->
+  <ul class="list-inline">
+    <li class="list-inline-item"> <%= link_to 'Edit Creature', edit_creature_path, class: "btn btn-primary" %>
+    </li>
+    <li class="list-inline-item"> <%= link_to 'Back', creatures_path, class: "btn btn-primary" %></li>
+    <li><%= link_to 'Book a creature', new_creature_booking_path(@creature), class: "btn btn-primary" %></li>
+  </ul>
 </div>
+
 <div class="container">
   <h2> Reviews </h2>
   <table class="table">
@@ -29,18 +26,17 @@
       </tr>
     <% end %>
   </table>
-
   <ul class="list-inline">
-    <li class="list-inline-item"> <%= link_to 'Edit Creature', edit_creature_path, class: "btn btn-primary" %>
-      <% if policy(@creature).update?%>
-        <%= link_to 'Edit', edit_creature_path(@creature)%>
-      <% end %>
-      <% if policy(@creature).destroy?%>
-        <%= link_to 'Delete', creature_path(@creature), method: :delete, data: { confirm: 'Are you sure?' }  %>
-      <% end %>
+    <li class="list-inline-item">
+    <% if policy(@creature).update?%>
+      <%= link_to 'Edit Review', edit_creature_path(@creature), class: "btn btn-primary"%>
+    <% end %>
     </li>
-    <li class="list-inline-item"> <%= link_to 'Back', creatures_path, class: "btn btn-primary" %></li>
-    <li><%= link_to 'Book a creature', new_creature_booking_path(@creature), class: "btn btn-primary" %></li>
+    <li class="list-inline-item">
+    <% if policy(@creature).destroy?%>
+      <%= link_to 'Delete Review', creature_path(@creature), method: :delete, class: "btn btn-primary", data: { confirm: 'Are you sure?' }  %>
+    <% end %>
+    </li>
   </ul>
 </div>
 
