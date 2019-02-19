@@ -8,10 +8,11 @@
         <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
         <%= f.input :description %>
         <%= f.input :rating, collection: 0..5 %>
-
-        <%= f.submit "Add review", class: "btn btn-primary" %>
+      <ul class="list-inline">
+        <li class="list-inline-item"> <%= f.submit "Add review", class: "btn btn-primary" %> </li>
       <% end %>
-      <%= link_to 'Back', creature_path(@booking.creature), class: "btn btn-primary" %>
+      <li class="list-inline-item"> <%= link_to 'Back', creature_path(@booking.creature), class: "btn btn-primary" %> </li>
+      </ul>
     </div>
   </div>
 </div>

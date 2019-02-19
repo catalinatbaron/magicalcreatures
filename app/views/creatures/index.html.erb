@@ -1,23 +1,25 @@
 <div class="container">
   <h1 class="text-center">Magical Creatures</h1>
+</div>
+<div class="container">
   <div class="row card-group">
     <% @creatures.each do |creature| %>
-    <div class="col-sm-4">
-      <div class="card-body">
-          <% if creature.photo.present?  %>
-            <%=  cl_image_tag creature.photo, :width=>200, :height=>200, :crop=>"scale" %>
-          <% end %>
-          <h2 class="card-title"> <%= creature.name %> </h2>
-          <p class="card-text">
-            <%= creature.super_power %>
-            <%= creature.price %>
-          </p>
-          <%= link_to 'Details', creature_path(creature.id), class: "link" %> </div>
+      <div class="col-sm-6">
+        <div class="card-body">
+            <% if creature.photo.present?  %>
+              <%=  cl_image_tag creature.photo, :width=>200, :height=>200, :crop=>"scale" %>
+            <% end %>
+            <h2 class="card-title"> <%= creature.name %> </h2>
+            <p class="card-text"> slogan: <%= creature.super_power %> </p>
+            <p class="card-text"> price per hour: <%= creature.price %> </p>
+            <%= link_to 'Details', creature_path(creature.id), class: "link" %> </div>
+        </div>
       </div>
-    </div>
     <% end %>
-    <h4
-      class="text-center"><%= link_to 'Add a Creature!', new_creature_path, class: "link" %>
-    </h4>
   </div>
 </div>
+<div class="container">
+  <%= link_to 'Add a Creature!', new_creature_path, class: "btn btn-primary" %>
+</div>
+
+
