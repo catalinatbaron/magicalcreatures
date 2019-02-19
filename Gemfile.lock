@@ -1,10 +1,3 @@
-GIT
-  remote: git://github.com/wazery/vider.git
-  revision: 9647256685a0ee0f4712267e0ce715207a99e972
-  specs:
-    vider (0.0.1)
-      rails (>= 4.1.6)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -257,7 +250,6 @@ DEPENDENCIES
   spring
   spring-watcher-listen (~> 2.0.0)
   uglifier
-  vider!
   web-console (>= 3.3.0)
   webpacker
 

@@ -13,6 +13,7 @@ gem 'bootstrap-sass', '~> 3.3'
 gem 'font-awesome-sass', '~> 5.5.0'
 gem 'sassc-rails'
 gem 'simple_form'
+gem 'uglifier'
 gem 'webpacker'
 gem 'devise'
 # User authorization
@@ -29,9 +30,7 @@ gem 'calendarjs-rails'
 
 gem "simple_calendar", "~> 2.0"
 
-gem 'vider', github: 'wazery/vider'
-
-gem 'uglifier'
+# gem 'vider', github: 'wazery/vider'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
