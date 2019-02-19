@@ -7,4 +7,10 @@ class Creature < ApplicationRecord
   validates :price, presence: true
 
   mount_uploader :photo, PhotoUploader
+
+  def unavailable_dates
+    bookings.pluck(:start_time, :end_time).map do |range|
+      { from: range[0], to: range[1] }
+    end
+  end
 end

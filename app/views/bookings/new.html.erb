@@ -1,29 +1,6 @@
 <div class="container">
   <h1 class="text-center">Create a booking</h1>
-  <div class="row">
-  <div class="col-xs-12 col-sm-6 col-sm-offset-3">
-    <%= simple_form_for [ @creature, @booking] do |f| %>
-      <%= f.error_notification %>
-      <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
-      <%= month_calendar(attribute: :start_time, end_attribute: :end_time) do |date| %>
-        <%= f.input :start_time, class: 'form-control' %>
-        <%= f.input :end_time, class: 'form-control' %>
-
-      <% end %>
-
-
-
-
-
-      <div class="form-actions">
-        <%= f.button :submit, class: 'btn btn-primary' %>
-      </div>
-    <% end %>
-  </div>
+  <h2 class="text-center">Set up a meeting with <%= @creature.name %>!</h2>
+  <h2 class="text-center">****</h2>
+  <%= render 'form', booking: @booking, creature: @creature %>
 </div>
-
-
-</div>
-
-
-
