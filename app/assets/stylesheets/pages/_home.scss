@@ -59,12 +59,14 @@ link {
   font-size: 16px;
   font-style: bold;
   color: $light;
-.instructions{
+}
+
+.instructions {
   display: flex;
  align-items: center;
   justify-content: center;
   justify-content: space-between;
-  margin: auto 20%;
+  margin: 25px 20%;
 }
 
 
