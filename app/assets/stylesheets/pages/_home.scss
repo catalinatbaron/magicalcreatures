@@ -26,7 +26,7 @@ video {
   height: auto;
 }
 
-.title{
+.main-title {
   margin-top: 20%;
   position: absolute;
   display: flex;
@@ -34,6 +34,8 @@ video {
   align-itmes: center;
   justify-content: center;
   color: white;
+   font-family: 'Rozha One', serif;
+   font-size: 100px;
 }
 
 .sub-title p {
@@ -46,6 +48,7 @@ video {
   color: white;
 }
 
+
 .main-title {
    font-family: 'Rozha One', serif;
    font-size: 100px;
@@ -56,4 +59,12 @@ link {
   font-size: 16px;
   font-style: bold;
   color: $light;
+.instructions{
+  display: flex;
+ align-items: center;
+  justify-content: center;
+  justify-content: space-between;
+  margin: auto 20%;
 }
+
+

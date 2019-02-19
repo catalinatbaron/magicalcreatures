@@ -18,10 +18,20 @@ gem 'webpacker'
 gem 'devise'
 # User authorization
 gem 'pundit'
+# Datepicker for Bookings
+# gem 'momentjs-rails', '>= 2.9.0'
+# gem 'bootstrap3-datetimepicker-rails', '~> 4.17.47'
 
 gem 'carrierwave', '~> 1.2'
 
 gem 'cloudinary', '~> 1.9.1'
+
+gem 'calendarjs-rails'
+
+gem "simple_calendar", "~> 2.0"
+
+gem 'vider', github: 'wazery/vider'
+
 
 group :development do
   gem 'web-console', '>= 3.3.0'
