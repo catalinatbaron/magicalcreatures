@@ -3,7 +3,8 @@ class Booking < ApplicationRecord
   belongs_to :creature
   has_one :review
 
-  validates :start_time, :end_time, presence: true, availability: true
+  validates :start_time, :end_time, presence: true
+  # , availability: true
   validate :end_time_after_start_time
 
   private
