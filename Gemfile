@@ -19,7 +19,7 @@ gem 'devise'
 # User authorization
 gem 'pundit'
 # Datepicker for Bookings
-# gem 'flatpickr_rails'
+gem 'flatpickr_rails'
 
 gem 'carrierwave', '~> 1.2'
 
