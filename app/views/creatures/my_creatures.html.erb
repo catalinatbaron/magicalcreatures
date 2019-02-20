@@ -2,15 +2,32 @@
   <h1 class="text-center page-header">All your creatures!</h1>
   <div class="row">
     <% current_user.creatures.each do |creature| %>
-      <div class="col-sm-4">
+    <div class="col">
+      <% if creature.photo.present? %>
+        <%= link_to creature_path(creature) do %>
+        <%=  cl_image_tag creature.photo, :crop=>"scale", :size => "400x400" %>
+        <% end %>
+        <% end %>
+    </div>
+      <div class="col">
         <div class="card-body">
           <h2 class="card-title"> <%=creature.name  %> </h2>
+          <p class="card-text"> <%= creature.super_power %> </p>
           <p class="card-text"> <%= creature.description %> </p>
+          <ul class="list-inline">
+            <li class="list-inline-item"><%= link_to 'Edit Creature', edit_creature_path(creature), class: "btn btn-primary" %></li>
+            <li class="list-inline-item"><%= link_to 'Delete Creature', creature_path(creature), method: :delete, class: "btn btn-primary"  %></li>
+          </ul>
         </div>
       </div>
     <% end %>
   </div>
 </div>
 <div class="container">
+  <%= link_to 'Add a Creature!', new_creature_path, class: "btn btn-primary" %>
+</div>
+<div class="container">
   <%= link_to 'Go back to creatures', creatures_path, class: "btn btn-primary" %>
 </div>
+
+
