@@ -5,9 +5,13 @@
       <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
       <div class="form-inputs">
-        <%= f.input :start_time, as: :datetime, html5: true, label: "Dates", placeholder: "From", wrapper_html: { class: "inline_field_wrapper" }%>
-        <%= f.input :end_time, as: :datetime, html5: true, label: '&nbsp;'.html_safe, placeholder: "To", wrapper_html: { class: "inline_field_wrapper" }%>
+        <%= f.input :start_time, as: :string, required: false, label: "Dates", placeholder: "From", input_html: { class: "datepicker" }%>
+        <%= f.input :end_time, as: :string, required: false, label: '&nbsp;'.html_safe, placeholder: "To", input_html: { class: "datepicker" }%>
       </div>
+      <script type="text/javascript">
+        const el = document.getElementById('bar');
+        flatpickr(el);
+      </script>
 
       <div class="form-actions">
         <%= f.button :submit, class: 'btn btn-primary btn-booking' %>
