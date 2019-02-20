@@ -1,39 +1,40 @@
+<!-- test -->
 <div class="container">
-  <h1 class="text-center page-header">Magical Creatures</h1>
-</div>
-
-<div class="container">
-  <div class="row card-group">
+  <div class="row card-group page-header">
     <% @creatures.each do |creature| %>
-      <div class="col-sm-6 col-md-4">
-        <div class="card">
-          <div class="text-center">
-            <% if creature.photo.present?  %>
+    <div class="col-sm-6 col-md-4">
+      <div class="my-card">
+        <div class="the-front text-center">
+          <% if creature.photo.present?  %>
+          <%=  cl_image_tag creature.photo, :width=>200, :height=>200, :crop=>"fill" %>
+          <% end %>
+          <h2 class="card-title"> <%= creature.name %> </h2>
+        </div>
+        <div class="the-back">
+          <div class="description">
+            <div class="text-center">
+              <% if creature.photo.present?  %>
               <%=  cl_image_tag creature.photo, :width=>200, :height=>200, :crop=>"fill" %>
-            <% end %>
-          </div>
-          <div class="card-body text-center">
+              <% end %>
               <h2 class="card-title"> <%= creature.name %> </h2>
               <p class="card-text"> <%= creature.super_power %> </p>
               <p class="card-text card-fine-print"> Price / Hour: <%= creature.price %> </p>
               <% if creature.bookings.count(:review_id) > 0 %>
-                <p class="card-fine-print"> Rating Ave: <%= creature.bookings.average(:review_id).round(2) %> | # of Reviews: <%= creature.bookings.count(:review_id) %> </p>
+              <p class="card-fine-print"> Rating Ave: <%= creature.bookings.average(:review_id).round(2) %> | # of Reviews: <%= creature.bookings.count(:review_id) %> </p>
               <% else %>
-                <p class="card-fine-print"> No Reviews</p>
+              <p class="card-fine-print"> No Reviews</p>
               <% end %>
               <%= link_to 'Details', creature_path(creature.id), class: "link" %>
+            </div>
           </div>
         </div>
       </div>
+    </div>
     <% end %>
   </div>
 </div>
-
+<!-- end -->
+<!-- example -->
 <div class="container text-center">
   <%= link_to 'Add a Creature!', new_creature_path, class: "btn btn-primary" %>
 </div>
-
-
-
-
-
