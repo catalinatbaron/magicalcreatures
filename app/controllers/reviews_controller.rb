@@ -12,8 +12,8 @@ class ReviewsController < ApplicationController
     authorize @review
     if @review.valid?
       @review.save
-      @booking.review_id = @review.id
-      @booking.save
+      @booking = Booking.find(@booking.id)
+      @booking.update_attribute(:review_id, @review.id)
       redirect_to my_bookings_bookings_path
     else
       render :new
