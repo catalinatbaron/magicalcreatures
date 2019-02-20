@@ -35,7 +35,6 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
     authorize @booking
     @booking.update(booking_params)
-    raise
     redirect_to booking_path(@booking)
   end
 
