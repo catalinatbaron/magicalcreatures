@@ -1,6 +1,16 @@
 <div class="container">
   <h1 class="text-center page-header">Magical Creatures</h1>
 </div>
+<div class="container">
+  <%= form_tag creatures_path, method: :get do %>
+  <%= text_field_tag :query,
+  params[:query],
+  class: "form-control",
+  placeholder: "Find a creature"
+  %>
+<% end %>
+</div>
+
 
 <div class="container">
   <div class="row card-group">
