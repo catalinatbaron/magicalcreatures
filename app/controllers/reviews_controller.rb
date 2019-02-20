@@ -11,9 +11,10 @@ class ReviewsController < ApplicationController
     @review = Review.new(review_params)
     authorize @review
     if @review.valid?
-      @booking.review_id = @review.id
       @review.save
-      redirect_to creature_path(@booking.creature)
+      @booking.review_id = @review.id
+      @booking.save
+      redirect_to my_bookings_bookings_path
     else
       render :new
     end
