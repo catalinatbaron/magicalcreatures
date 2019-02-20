@@ -1,31 +1,38 @@
 
 <div class="container">
   <h1 class="text-center page-header">All your bookings!</h1>
+  <% if current_user.bookings.first.nil? %>
+    <h3 class="text-center"> Oh! You have not booked any creature yet! </h3>
+    <h3 class="text-center"> Find your Creature <%= link_to 'here', creatures_path %> </h3>
+  <% else %>
+
     <table class="table">
     <thead>
       <tr>
         <th scope="col"> Creature </th>
         <th scope="col"> Start Time </th>
         <th scope="col"> End Time </th>
+        <th scope="col"></th>
         <th scope="col">Review</th>
         <th scope="col">Rating</th>
-        <th scope="col"></th>
+
       </tr>
     </thead>
     <tbody>
       <% current_user.bookings.each do |booking| %>
         <tr>
-          <td><%=booking.creature.name %></td>
+          <td> <%= link_to "#{booking.creature.name}", creature_path(booking.creature)%> </td>
           <td> <%=booking.start_time.to_formatted_s(:short)  %> </td>
           <td> <%= booking.end_time.to_formatted_s(:short) %> </td>
+          <td> <%= link_to 'Details', booking_path(booking), class: "link" %> </td>
           <% unless booking.review_id.nil? %>
             <td> <%= Review.find(booking.review_id).description %> </td>
             <td> <%= Review.find(booking.review_id).rating %> </td>
           <% end %>
-          <td> <%= link_to 'See details', booking_path(booking), class: "link" %> </td>
         </tr>
       <% end %>
     </tbody>
   </table>
+  <% end %>
 </div>
 
