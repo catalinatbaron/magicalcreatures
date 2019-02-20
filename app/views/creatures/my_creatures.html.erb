@@ -1,41 +1,46 @@
-
+<div class="container">
   <h1 class="text-center page-header">My creatures!</h1>
-
+  <% if current_user.creatures.count > 0 %>
     <% current_user.creatures.each do |creature| %>
     <div class="container">
-    <div class="row">
-    <div class="col">
-      <% if creature.photo.present? %>
-        <%= link_to creature_path(creature) do %>
-        <%=  cl_image_tag creature.photo, :crop=>"scale", :size => "400x400" %>
-        <% end %>
-        <% end %>
-    </div>
-      <div class="col">
-        <div class="card-body">
-          <h2 class="card-title"> <%=creature.name  %> </h2>
-          <p class="card-text"> <%= creature.super_power %> </p>
-          <p class="card-text"> <%= creature.description %> </p>
-          <ul class="list-inline">
-            <li class="list-inline-item"><%= link_to 'Edit Creature', edit_creature_path(creature), class: "btn btn-primary" %></li>
-            <li class="list-inline-item"><%= link_to 'Delete Creature', creature_path(creature), method: :delete, class: "btn btn-primary"  %></li>
-          </ul>
+      <div class="row">
+        <div class="col">
+         <% if creature.photo.present? %>
+           <%= link_to creature_path(creature) do %>
+            <%=  cl_image_tag creature.photo, :crop=>"scale", :size => "400x400" %>
+          <% end %>
+          <% end %>
+          </div>
+            <div class="col">
+              <div class="card-body">
+                <h2 class="card-title"> <%=creature.name  %> </h2>
+                <p class="card-text"> <%= creature.super_power %> </p>
+                <p class="card-text"> <%= creature.description %> </p>
+                <ul class="list-inline">
+                  <li class="list-inline-item"><%= link_to 'Edit Creature', edit_creature_path(creature), class: "btn btn-primary" %></li>
+                  <li class="list-inline-item"><%= link_to 'Delete Creature', creature_path(creature), method: :delete, class: "btn btn-primary"  %></li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-      </div>
-      </div>
+    </div>
     <% end %>
-
+  <% else %>
+    <h3 class="text-center"> Oh! You haven't added any of your creatures yet! </h3>
+  <% end %>
+</div>
 
 <div class="container">
-<ul class="list-inline text-center">
-  <li class="list-inline-item">
-  <%= link_to 'Add a Creature!', new_creature_path, class: "btn btn-primary" %>
-</li>
-<li class="list-inline-item">
-  <%= link_to 'Go back to creatures', creatures_path, class: "btn btn-primary" %>
-</li>
-</ul>
+  <ul class="list-inline text-center">
+    <li class="list-inline-item">
+    <%= link_to 'Add a Creature!', new_creature_path, class: "btn btn-primary" %>
+    </li>
+    <li class="list-inline-item">
+      <%= link_to 'Go back to creatures', creatures_path, class: "btn btn-primary" %>
+    </li>
+  </ul>
 </div>
 
 
