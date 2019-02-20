@@ -4,6 +4,7 @@
     <table class="table">
     <thead>
       <tr>
+        <th scope="col"> Creature </th>
         <th scope="col"> Start Time </th>
         <th scope="col"> End Time </th>
         <th scope="col">Review</th>
@@ -14,6 +15,7 @@
     <tbody>
       <% current_user.bookings.each do |booking| %>
         <tr>
+          <td><%=booking.creature.name %></td>
           <td> <%=booking.start_time.to_formatted_s(:short)  %> </td>
           <td> <%= booking.end_time.to_formatted_s(:short) %> </td>
           <% unless booking.review_id.nil? %>

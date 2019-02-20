@@ -10,10 +10,9 @@ class ReviewsController < ApplicationController
   def create
     @review = Review.new(review_params)
     authorize @review
-
-    if @review.save
+    if @review.valid?
       @booking.review_id = @review.id
-      @booking.save
+      @review.save
       redirect_to creature_path(@booking.creature)
     else
       render :new
