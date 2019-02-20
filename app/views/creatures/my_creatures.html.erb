@@ -1,7 +1,9 @@
-<div class="container">
+
   <h1 class="text-center page-header">All your creatures!</h1>
-  <div class="row">
+
     <% current_user.creatures.each do |creature| %>
+    <div class="container">
+    <div class="row">
     <div class="col">
       <% if creature.photo.present? %>
         <%= link_to creature_path(creature) do %>
@@ -20,14 +22,21 @@
           </ul>
         </div>
       </div>
+      </div>
+      </div>
     <% end %>
-  </div>
-</div>
+
+
 <div class="container">
+<ul class="list-inline text-center">
+  <li class="list-inline-item">
   <%= link_to 'Add a Creature!', new_creature_path, class: "btn btn-primary" %>
-</div>
-<div class="container">
+</li>
+<li class="list-inline-item">
   <%= link_to 'Go back to creatures', creatures_path, class: "btn btn-primary" %>
+</li>
+</ul>
 </div>
+
 
 
