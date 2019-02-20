@@ -1,6 +1,21 @@
 <!-- test -->
 <div class="container">
-  <div class="row card-group page-header">
+  <h1 class="text-center page-header">Magical Creatures</h1>
+</div>
+
+<div class="container">
+  <%= form_tag creatures_path, method: :get do %>
+  <%= text_field_tag :query,
+  params[:query],
+  class: "form-control",
+  placeholder: "Find a creature"
+  %>
+<% end %>
+</div>
+
+
+<div class="container">
+  <div class="row card-group">
     <% @creatures.each do |creature| %>
     <div class="col-sm-6 col-md-4">
       <div class="my-card">
@@ -20,7 +35,16 @@
               <p class="card-text"> <%= creature.super_power %> </p>
               <p class="card-text card-fine-print"> Price / Hour: <%= creature.price %> </p>
               <% if creature.bookings.count(:review_id) > 0 %>
-              <p class="card-fine-print"> Rating Ave: <%= creature.bookings.average(:review_id).round(2) %> | # of Reviews: <%= creature.bookings.count(:review_id) %> </p>
+
+                <% array = [] %>
+                <% creature.bookings.each do |booking| %>
+                  <% unless booking.review_id.nil? %>
+                    <% array << Review.find(booking.review_id).rating %>
+                  <% end %>
+                <% end %>
+                <% avg = array.inject{ |sum, el| sum + el }.to_f / array.size %>
+                <p class="card-fine-print"> Rating Avg: <%= avg.round(2) %>
+                | # of Reviews: <%= creature.bookings.count(:review_id) %> </p>
               <% else %>
               <p class="card-fine-print"> No Reviews</p>
               <% end %>

@@ -12,11 +12,21 @@
         <p>Description: <%= @creature.description %></p>
         <p>Price: <strong><%= @creature.price %></strong> </p>
         <ul class="list-inline">
-          <li class="list-inline-item"> <%= link_to 'Edit Creature', edit_creature_path, class: "btn btn-primary" %>
+
+          <li class="list-inline-item">
+            <% if policy(@creature).destroy?%>
+            <%= link_to 'Edit Creature', edit_creature_path, class: "btn btn-primary" %>
+            <% end %>
           </li>
-          <li><%= link_to 'Book a creature', new_creature_booking_path(@creature), class: "btn btn-primary" %></li>
+          <li class="list-inline-item">
+              <% if policy(@creature).destroy?%>
+            <%= link_to 'Delete Creature', creature_path(@creature), method: :delete, class: "btn btn-primary", data: { confirm: 'Are you sure?' }  %>
+            <% end %>
+          </li>
+
+          <li><%= link_to 'Book this creature!', new_creature_booking_path(@creature), class: "btn btn-primary" %></li>
         </ul>
-        <li class="list-inline-item"> <%= link_to 'Back', creatures_path, class: "btn btn-success" %></li>
+
         <h2> Reviews </h2>
         <% if @reviews.count > 0 %>
         <table class="table">
@@ -30,23 +40,21 @@
             <td> <%= review.rating %> </td>
           </tr>
           <% end %>
+
           <% else %>
           <p>There are no reviews yet</p>
           <% end %>
-        </table>
-        <ul class="list-inline">
-          <li class="list-inline-item">
-            <% if policy(@creature).update?%>
-            <%= link_to 'Edit Review', edit_creature_path(@creature), class: "btn btn-primary"%>
-            <% end %>
-          </li>
-          <li class="list-inline-item">
-            <% if policy(@creature).destroy?%>
-            <%= link_to 'Delete Creature', creature_path(@creature), method: :delete, class: "btn btn-primary", data: { confirm: 'Are you sure?' }  %>
-            <% end %>
-          </li>
+          </table>
+          <ul class="list-inline">
+          <li class="list-inline-item"><%= link_to 'Book it!', new_creature_booking_path(@creature), class: "btn btn-primary" %></li>
         </ul>
       </div>
     </div>
   </div>
 </div>
+
+<div class="container">
+   <li class="list-inline-item"> <%= link_to 'Back', creatures_path, class: "btn btn-success" %></li>
+</div>
+
+
