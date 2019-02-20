@@ -9,6 +9,8 @@ h2 {
 
 p {
   color: $dark;
+  font-weight: 250;
+  line-height: 1;
 }
 
 .banner {
@@ -63,18 +65,27 @@ video {
    color: white;
 }
 
-link {
+.link {
   font-size: 16px;
+  color: $light2;
+  font-style: italic;
+}
+
+.link:hover{
+  font-size: 16px;
+  color: $dark2;
   font-style: bold;
-  color: $light;
+  text-decoration: none;
+}
+
+.pxl {
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .instructions {
-  display: flex;
- align-items: center;
-  justify-content: center;
-  justify-content: space-between;
-  margin: 25px 20%;
+    margin-right: 50px;
+    margin-left: 50px;
 }
 
 

@@ -3,8 +3,8 @@
   <table class="table">
     <thead>
       <tr>
-        <th scope="col"> Start Time </th>
-        <th scope="col"> End Time </th>
+        <th scope="col"> From </th>
+        <th scope="col"> Until </th>
         <th scope="col"></th>
       </tr>
     </thead>
@@ -12,7 +12,7 @@
       <tr>
        <td> <%= @booking.start_time.to_formatted_s(:short) %> </td>
        <td> <%= @booking.end_time.to_formatted_s(:short) %> </td>
-       <td> <%= link_to 'Review', new_booking_review_path(@booking), class: "link" %></td>
+       <td> <%= link_to 'Add a Review', new_booking_review_path(@booking), class: "link" %></td>
       </tr>
     </tbody>
   </table>
