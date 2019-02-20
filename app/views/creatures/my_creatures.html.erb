@@ -1,5 +1,5 @@
 <div class="container">
-  <h1 class="text-center page-header">My creatures!</h1>
+  <h1 class="text-center page-header">My Creatures!</h1>
   <% if current_user.creatures.count > 0 %>
     <% current_user.creatures.each do |creature| %>
     <div class="container">
@@ -35,7 +35,7 @@
 <div class="container">
   <ul class="list-inline text-center">
     <li class="list-inline-item">
-    <%= link_to 'Add a Creature!', new_creature_path, class: "btn btn-primary" %>
+    <%= link_to 'Add a Creature', new_creature_path, class: "btn btn-primary" %>
     </li>
     <li class="list-inline-item">
       <%= link_to 'Go back to creatures', creatures_path, class: "btn btn-primary" %>

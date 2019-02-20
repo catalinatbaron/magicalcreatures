@@ -9,7 +9,9 @@
       <div class="col">
         <h1><%= @creature.name %></h1>
         <p>Abilities: <%= @creature.super_power %></p>
-        <p>Description: <%= @creature.description %></p>
+        <% if @creature.description.present?%>
+          <p>Description: <%= @creature.description %></p>
+        <% end %>
         <p>Price: <strong><%= @creature.price %></strong> </p>
         <ul class="list-inline">
 
@@ -23,8 +25,6 @@
             <%= link_to 'Delete Creature', creature_path(@creature), method: :delete, class: "btn btn-primary", data: { confirm: 'Are you sure?' }  %>
             <% end %>
           </li>
-
-          <li><%= link_to 'Book this creature!', new_creature_booking_path(@creature), class: "btn btn-primary" %></li>
         </ul>
 
         <h2> Reviews </h2>
@@ -54,7 +54,7 @@
           <% end %>
           </table>
           <ul class="list-inline">
-          <li class="list-inline-item"><%= link_to 'Book it!', new_creature_booking_path(@creature), class: "btn btn-primary" %></li>
+          <li class="list-inline-item"><%= link_to "Book #{@creature.name}", new_creature_booking_path(@creature), class: "btn btn-primary" %></li>
         </ul>
       </div>
     </div>
