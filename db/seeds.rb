@@ -56,11 +56,11 @@ puts 'Fucking good reviews'
 puts 'Yeah'
 review1 = Review.create!(description: 'That unicorn really wanna make me kill myself', rating: 1)
 booking6.update(review_id: review1.id)
-review2 = Review.create!(description: 'Amy likes everything', rating: 3)
+review2 = Review.create!(description: 'This flying camel is killing it!', rating: 5)
 booking7.update(review_id: review2.id)
-review3 = Review.create!(description: 'that flying camel is killing it ', rating: 4)
+review3 = Review.create!(description: 'This dragon has anger issues', rating: 2)
 booking8.update(review_id: review3.id)
-review4 = Review.create!(description: 'blablabla', rating: 2)
+review4 = Review.create!(description: 'Cutie', rating: 5)
 booking9.update(review_id: review4.id)
 
 
