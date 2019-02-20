@@ -78,12 +78,14 @@ video {
   text-decoration: none;
 }
 
+.pxl {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
 .instructions {
-  display: flex;
- align-items: center;
-  justify-content: center;
-  justify-content: space-between;
-  margin: 25px 20%;
+    margin-right: 50px;
+    margin-left: 50px;
 }
 
 
