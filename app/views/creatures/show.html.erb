@@ -23,6 +23,8 @@
             <%= link_to 'Delete Creature', creature_path(@creature), method: :delete, class: "btn btn-primary", data: { confirm: 'Are you sure?' }  %>
             <% end %>
           </li>
+
+          <li><%= link_to 'Book this creature!', new_creature_booking_path(@creature), class: "btn btn-primary" %></li>
         </ul>
 
         <h2> Reviews </h2>
