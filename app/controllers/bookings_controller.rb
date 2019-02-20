@@ -16,8 +16,12 @@ class BookingsController < ApplicationController
     @booking.creature = @creature
     @booking.user_id = current_user.id
     authorize @booking
-    @booking.save
-    redirect_to booking_path(@booking)
+    if @booking.valid?
+      @booking.save
+      redirect_to booking_path(@booking)
+    else
+      render :new
+    end
   end
 
   def edit
