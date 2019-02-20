@@ -1,11 +1,13 @@
 <div class="banner">
-  <%= video_tag(["space.mp4"], :autoplay => true, :loop => true)%>
+  <div class="video">
+    <%= video_tag(["space.mp4"], :autoplay => true, :loop => true) %>
+  </div>
   <div class="title">
     <h1 class="main-title">Magic</h1>
-  </div>
-  <div class="sub-title">
-    <p class="line-one">Find Your Magical Creature Today!</p>
-    <p class="line-two"> <%= link_to "Go to Creatures", creatures_path, class: "btn btn-primary" %> </p>
+    <div class="sub-title">
+      <p class="line-one">Find Your Magical Creature Today!</p>
+      <p class="line-two"> <%= link_to "Go to Creatures", creatures_path, class: "btn btn-primary" %> </p>
+    </div>
   </div>
 </div>
 

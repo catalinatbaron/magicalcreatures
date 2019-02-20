@@ -40,7 +40,15 @@
             <td> <%= review.rating %> </td>
           </tr>
           <% end %>
-
+            <tr>
+              <td> Average Rating </td>
+              <td>
+                <% @all_ratings = [] %>
+                <% @reviews.each do |review| %>
+                <% @all_ratings << review.rating %>
+                <% end %>
+                <%= @all_ratings.sum/@all_ratings.length.to_f.round(2) %> </td>
+            </tr>
           <% else %>
           <p>There are no reviews yet</p>
           <% end %>
