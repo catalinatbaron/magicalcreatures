@@ -1,7 +1,17 @@
 class CreaturesController < ApplicationController
   def index
     @creature = policy_scope(Creature).order(created_at: :desc)
-    @creatures = Creature.all
+    # @creatures = Creature.all
+    if params[:query].present?
+       sql_query = " \
+        creatures.name ILIKE :query \
+        OR creatures.super_power ILIKE :query \
+        OR creatures.description ILIKE :query \
+      "
+      @creatures = Creature.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @creatures = Creature.all
+    end
   end
 
   def show
