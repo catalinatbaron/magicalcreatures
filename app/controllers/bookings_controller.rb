@@ -26,7 +26,7 @@ class BookingsController < ApplicationController
 
   def edit
     @booking = Booking.find(params[:id])
-    @creature = Creature.find(params[:creature_id])
+    @creature = Creature.find(@booking.creature.id)
     authorize @booking
   end
 
@@ -43,7 +43,8 @@ class BookingsController < ApplicationController
     @creature = Creature.find(@booking.creature.id)
     authorize @booking
     @booking.destroy
-    redirect_to creature_path(@creature)
+    @bookings = Booking.all
+    redirect_to my_bookings_bookings_path(@bookings[0])
   end
 
   def my_bookings

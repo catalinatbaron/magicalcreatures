@@ -1,4 +1,8 @@
 // Specific CSS for your home-page
+*{
+  margin:0;
+  padding:0;
+}
 h1 {
   color: $light2;
 }
@@ -54,30 +58,45 @@ video {
   font-size: 16px;
   color: $light2;
   font-style: italic;
-}
-
 .link:hover{
   font-size: 16px;
   color: $dark2;
   font-style: bold;
   text-decoration: none;
 }
-
-.pxl {
-  padding-left: 10px;
-  padding-right: 10px;
 }
 
-.instructions {
-    margin-right: 50px;
-    margin-left: 50px;
+.background-image{
+ background-image: url('new-home.png');
+ height: 100vh;
+ background-size: cover;
+ background-position: center;
+ // background-attachment: fixed;
+ color: white;
+ text-align: center;
+  margin-top: -6px;
 }
 
-.carousel-inner img {
-  margin: auto;
-  opacity: .7;
+.inst-card{
+  min-width: 200px;
+  padding: 20px 20px;
+  border-radius: 10px;
+  background-color: white;
+  margin: 25px 20px;
 }
 
+.blue-title {
+  color: $dark2;
+  padding-top: 30px;
+}
+@media only screen and (max-width: 500px) {
+  .main-title {
+    font-size: 2.7em;
+  }
+  .banner-text {
+    font-size: 0.7em;
+  }
+}
 
 
 
