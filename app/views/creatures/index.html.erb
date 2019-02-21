@@ -18,6 +18,7 @@
   <div class="row card-group">
     <% @creatures.each do |creature| %>
     <div class="col-sm-6 col-md-4">
+      <%= link_to creature_path(creature), id: "card-link" do %>
       <div class="my-card">
         <div class="the-front text-center">
           <% if creature.photo.present?  %>
@@ -48,7 +49,7 @@
               <% else %>
               <p class="card-fine-print"> No Reviews</p>
               <% end %>
-              <%= link_to 'Details', creature_path(creature.id), class: "link" %>
+              <% end %>
             </div>
           </div>
         </div>
