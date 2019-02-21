@@ -1,57 +1,60 @@
 <div class="banner">
-  <div class="video">
-    <%= video_tag(["space.mp4"], :autoplay => true, :loop => true) %>
-  </div>
+  <%= video_tag(["space.mp4"], :autoplay => true, :loop => true) %>
   <div class="title">
     <h1 class="main-title">Magic</h1>
     <p><span class="line-one banner-text"></span></p>
-<%= link_to "Go to Creatures", creatures_path, class: "btn btn-primary" %>
-  </div>
-
+    <%= link_to "Go to Creatures", creatures_path, class: "btn btn-primary" %>
   </div>
 </div>
-<div class="container">
-  <!-- Optional: some overlay text to describe the video -->
-  <div class="content">
-    <!-- Use a button to pause/play the video with JavaScript -->
-    <h1 class="text-center">Rent a Magical Creature</h1>
-    <div class="instructions card-group row">
-      <div class="col-sm-6 col-md-4 pxl">
-        <div class="choose card-body">
-          <div class="text-center">
-             <%= image_tag("unicorn.png", width: 75) %>
+<div class="background-image">
+  <div class="container">
+    <h1 class="text-center blue-title">Rent a Magical Creature</h1>
+    <div class="row">
+      <!-- Optional: some overlay text to describe the video -->
+      <div class="content">
+        <!-- Use a button to pause/play the video with JavaScript -->
+        <div class="instructions">
+          <div class="col-xs-12 col-sm-6 col-md-4">
+            <div class="inst-card">
+              <div class="choose card-body">
+                <div class="text-center">
+                  <%= image_tag("unicorn.png", width: 75) %>
+                </div>
+                <h3 class="text-center">Choose a Creature</h3>
+                <p class="text-left">
+                  Sprinkle some abracadabra on your mundane chores, we’ve got the creature for you.
+                </p>
+              </div>
+            </div>
           </div>
-          <h3 class="text-center">Choose a Creature</h3>
-          <p class="text-left">
-            Whether you’re seeking a magical experience to lift your spirits, or you want to sprinkle some abracadabra on your mundane chores, we’ve got the creature for you.
-          </p>
-        </div>
-      </div>
-
-      <div class="col-sm-6 col-md-4 pxl">
-        <div class="book card-body">
-          <div class="text-center">
-            <%= image_tag("wand.png", width: 75) %>
+          <div class="col-xs-12 col-sm-6 col-md-4">
+            <div class="inst-card">
+              <div class="book card-body">
+                <div class="text-center">
+                  <%= image_tag("wand.png", width: 75) %>
+                </div>
+                <h3 class="text-center">Book It</h3>
+                <p class="text-left">
+                  With our flexible booking system, you can book a magical creature twenty-fairy seven.
+                </p>
+              </div>
+            </div>
           </div>
-          <h3 class="text-center">Book It</h3>
-          <p class="text-left">
-            You decide which hour is your witching hour. With our flexible booking system, you can book a magical creature twenty-fairy seven. Create an account, find a creature, and go fur it!
-          </p>
-        </div>
-      </div>
-
-      <div class="col-sm-6 col-md-4 px-4 pxl">
-        <div class="enjoy card-body">
-          <div class="text-center">
-            <%= image_tag("confetti.png", width: 75) %>
+          <div class="col-xs-12 col-sm-6 col-md-4">
+            <div class="inst-card">
+              <div class="enjoy card-body">
+                <div class="text-center">
+                  <%= image_tag("confetti.png", width: 75) %>
+                </div>
+                <h3 class="text-center">Have a Good Time</h3>
+                <p class="text-left">
+                  You decide which hour is your witching hour, Lose some elf-control, boost your elf-confidence, and have some elfing fun!
+                </p>
+              </div>
+            </div>
           </div>
-          <h3 class="text-center">Have a Good Time</h3>
-          <p class="text-left">
-            Lose some elf-control, boost your elf-confidence, and have some elfing fun!
-          </p>
         </div>
       </div>
     </div>
   </div>
 </div>
-
