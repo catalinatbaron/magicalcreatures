@@ -10,7 +10,6 @@ h2 {
 p {
   color: $dark;
   font-weight: 250;
-  line-height: 1;
 }
 
 .banner {
@@ -23,15 +22,15 @@ p {
 }
 
 video {
-  z-index: -1;
+  // z-index: -1;
   width: 100%;
   height: auto;
 }
 
 .title {
-  padding-top: 10%;
+  // padding-top: 10%;
   position: absolute;
-  top: 0; right: 0; bottom: 0; left: 0;
+  top: 40%; right: 0; bottom: 0%; left: 0%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -45,6 +44,10 @@ video {
 
 .line-one {
   color: white;
+}
+
+.line-two {
+  padding: 20px;
 }
 
 .link {

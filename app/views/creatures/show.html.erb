@@ -36,8 +36,8 @@
           </tr>
           <% @reviews.each do |review| %>
           <tr>
-            <td> <%= review.description %> </td>
-            <td> <%= review.rating %> </td>
+            <td> <p> <%= review.description %> </p> </td>
+            <td> <p> <%= review.rating %> </p> </td>
           </tr>
           <% end %>
             <tr>
@@ -50,7 +50,7 @@
                 <%= @all_ratings.sum/@all_ratings.length.to_f.round(2) %> </td>
             </tr>
           <% else %>
-          <p>There are no reviews yet</p>
+          <p> Book now and be the first to write a review for <%= @creature.name %> </p>
           <% end %>
           </table>
           <ul class="list-inline">
