@@ -7,7 +7,7 @@
         <div class="col">
          <% if creature.photo.present? %>
            <%= link_to creature_path(creature) do %>
-            <%=  cl_image_tag creature.photo, :crop=>"scale", :size => "250x250" %>
+            <%=  cl_image_tag creature.photo, :crop=>"scale", :size => "400x400" %>
           <% end %>
           <% end %>
           </div>
