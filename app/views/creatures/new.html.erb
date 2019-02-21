@@ -1,11 +1,19 @@
 <div class="container">
-  <h1 class="text-center page-header">Add a New Creature!</h1>
-
-  <%= render 'form', creature: @creature %>
-
-  <p>
-    <%= link_to 'Back', creatures_path, class: "btn btn-success" %>
-  </p>
+  <h1 class="text-center page-header">Add a New Creature</h1>
 </div>
+<div class="container">
+  <div class="form-flex">
+    <div class="form-graphic">
+    </div>
+    <div class="form-input">
+    <%= render 'form', creature: @creature %>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <p> <%= link_to 'Back', creatures_path, class: "btn btn-success" %> </p>
+</div>
+
+
 
 
