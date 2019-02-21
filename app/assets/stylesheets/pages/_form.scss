@@ -1,0 +1,29 @@
+@import "home";
+
+.form-flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.form-graphic {
+  height: 500px;
+  width: 500px;
+  flex-shrink: 1;
+  margin-right: 12px;
+  background-image: url('gradinet-icon.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 5px;
+  box-shadow: 3px 3px 10px #E0E0E0;
+}
+
+.form-input {
+  width: 50vw;
+}
+
+
+
+
+
