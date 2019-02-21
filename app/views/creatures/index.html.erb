@@ -4,13 +4,15 @@
 </div>
 
 <div class="container">
-  <%= form_tag creatures_path, method: :get do %>
-  <%= text_field_tag :query,
-  params[:query],
-  class: "form-control",
-  placeholder: "Find a creature"
-  %>
-<% end %>
+  <div class="search-bar">
+    <%= form_tag creatures_path, method: :get do %>
+    <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Find a creature"
+    %>
+  <% end %>
+  </div>
 </div>
 
 
@@ -61,5 +63,7 @@
 <!-- end -->
 <!-- example -->
 <div class="container text-center">
-  <%= link_to 'Add a Creature!', new_creature_path, class: "btn btn-primary" %>
+  <div class="bottom-center-button">
+    <%= link_to 'Add a Creature!', new_creature_path, class: "btn btn-primary" %>
+  </div>
 </div>
