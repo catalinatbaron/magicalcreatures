@@ -41,7 +41,7 @@ class CreaturesController < ApplicationController
     authorize @creature
     @creature.user = current_user
     @creature.save
-    redirect_to creature_path(@creature)
+    redirect_to my_creatures_creatures_path(@creature)
   end
 
   def edit
@@ -53,7 +53,7 @@ class CreaturesController < ApplicationController
     @creature = Creature.find(params[:id])
     authorize @creature
     @creature.update(params_creature)
-    redirect_to creature_path(@creature)
+    redirect_to my_creatures_creatures_path(@creature)
   end
 
   def destroy
