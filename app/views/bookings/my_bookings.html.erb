@@ -1,6 +1,6 @@
 
 <div class="container">
-  <h1 class="text-center page-header">All your bookings!</h1>
+  <h1 class="text-center page-header">My Bookings!</h1>
   <% if current_user.bookings.first.nil? %>
     <h3 class="text-center"> Oh! You have not booked any creature yet! </h3>
     <h3 class="text-center"> Find your Creature <%= link_to 'here', creatures_path %> </h3>
