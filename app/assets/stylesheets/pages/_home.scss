@@ -10,11 +10,10 @@ h2 {
 p {
   color: $dark;
   font-weight: 250;
-  line-height: 1;
 }
 
 .banner {
-  position: relative;
+ position: relative;
  height: calc(100%-70px);
  background-position: center;
  // background-attachment: fixed;
@@ -23,46 +22,32 @@ p {
 }
 
 video {
-  z-index: -1;
+  // z-index: -1;
   width: 100%;
   height: auto;
 }
 
-.main-title {
-  margin-top: 20%;
+.title {
+  // padding-top: 10%;
   position: absolute;
+  top: 40%; right: 0; bottom: 0%; left: 0%;
   display: flex;
-  top: 0; right: 0; bottom: 0; left: 0;
-  align-itmes: center;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main-title {
   color: white;
    font-family: 'Rozha One', serif;
    font-size: 100px;
 }
 
 .line-one {
-  padding-top: 5%;
-  position: absolute;
-  display: flex;
-  top: 0; right: 0; bottom: 0; left: 0;
-  align-items: center;
-  justify-content: center;
   color: white;
 }
+
 .line-two {
-  padding-top: 18%;
-  position: absolute;
-  display: flex;
-  top: 0; right: 0; bottom: 0; left: 0;
-  align-items: center;
-  justify-content: center;
-}
-
-
-.main-title {
-   font-family: 'Rozha One', serif;
-   font-size: 100px;
-   color: white;
+  padding: 20px;
 }
 
 .link {
@@ -87,5 +72,12 @@ video {
     margin-right: 50px;
     margin-left: 50px;
 }
+
+.carousel-inner img {
+  margin: auto;
+  opacity: .7;
+}
+
+
 
 

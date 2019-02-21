@@ -10,7 +10,54 @@
 }
 
 .card {
-  margin-bottom: 15px;
-  border-color: white;
+    margin-bottom: 40px;
+    padding:40px;
   box-shadow: 1px 1px 10px #E0E0E0;
+  padding: 60px;
+
 }
+
+.my-card {
+  border-radius: 10px;
+  position: relative;
+  margin-bottom: 15px;
+  box-shadow: 1px 1px 10px #E0E0E0;
+ transform-style: preserve-3d;
+ transition: all 0.8s ease;
+ max-height: 400px;
+}
+
+.my-card:hover {
+  transform: rotateY(180deg);
+}
+
+
+.the-front{
+  backface-visibility: hidden;
+  overflow: hidden;
+  position: absolute;
+  top: 8%;
+  right: 20%;
+}
+
+.the-back{
+  position: relative;
+  backface-visibility: hidden;
+  overflow: hidden;
+  transform: rotateY(180deg);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.description{
+  position: relative;
+  z-index: 1;
+}
+
+#card-link{
+  text-decoration: none !important;
+}
+
+
+

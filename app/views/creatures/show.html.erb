@@ -9,7 +9,9 @@
       <div class="col">
         <h1><%= @creature.name %></h1>
         <p>Abilities: <%= @creature.super_power %></p>
-        <p>Description: <%= @creature.description %></p>
+        <% if @creature.description.present?%>
+          <p>Description: <%= @creature.description %></p>
+        <% end %>
         <p>Price: <strong><%= @creature.price %></strong> </p>
         <ul class="list-inline">
 
@@ -34,17 +36,25 @@
           </tr>
           <% @reviews.each do |review| %>
           <tr>
-            <td> <%= review.description %> </td>
-            <td> <%= review.rating %> </td>
+            <td> <p> <%= review.description %> </p> </td>
+            <td> <p> <%= review.rating %> </p> </td>
           </tr>
           <% end %>
-
+            <tr>
+              <td> Average Rating </td>
+              <td>
+                <% @all_ratings = [] %>
+                <% @reviews.each do |review| %>
+                <% @all_ratings << review.rating %>
+                <% end %>
+                <%= @all_ratings.sum/@all_ratings.length.to_f.round(2) %> </td>
+            </tr>
           <% else %>
-          <p>There are no reviews yet</p>
+          <p> Book now and be the first to write a review for <%= @creature.name %> </p>
           <% end %>
           </table>
           <ul class="list-inline">
-          <li class="list-inline-item"><%= link_to 'Book it!', new_creature_booking_path(@creature), class: "btn btn-primary" %></li>
+          <li class="list-inline-item"><%= link_to "Book #{@creature.name}", new_creature_booking_path(@creature), class: "btn btn-primary" %></li>
         </ul>
       </div>
     </div>

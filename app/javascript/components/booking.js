@@ -3,7 +3,6 @@ import flatpickr from 'flatpickr';
 const toggleDateInputs = function() {
   const startDateInput = document.getElementById('start_time');
   const endDateInput = document.getElementById('end_time');
-
   if (startDateInput && endDateInput) {
     const unvailableDates = JSON.parse(document.querySelector('.widget-content').dataset.unavailable)
 
