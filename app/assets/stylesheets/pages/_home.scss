@@ -77,7 +77,14 @@ video {
   margin: auto;
   opacity: .7;
 }
-
+@media only screen and (max-width: 500px) {
+  .main-title {
+    font-size: 2.7em;
+  }
+  .banner-text {
+    font-size: 0.7em;
+  }
+}
 
 
 
