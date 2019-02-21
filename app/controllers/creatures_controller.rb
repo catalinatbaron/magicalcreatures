@@ -60,7 +60,8 @@ class CreaturesController < ApplicationController
     @creature = Creature.find(params[:id])
     authorize @creature
     @creature.destroy
-    redirect_to creatures_path
+    @creatures = Creature.all
+    redirect_to my_creatures_creatures_path(@creatures[0])
   end
 
   def my_creatures
